@@ -10,8 +10,6 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
-		<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ae5a960e6b327061026fd2e09/18024458aa233db3faf43cc16.js");</script>
 	</head>
 	
 	<style type="text/css" media="screen">
@@ -19,9 +17,6 @@
 			height: 100vh;
 		}
 	
-		ul.nav li.dropdown:hover ul.dropdown-menu{
-			display: block;
-		}
 	
 		body {
 			overflow: hidden;
@@ -36,16 +31,46 @@
 		.videoWrapper {
 			height: 100vh;
 			width: 100%;
-			position:relative;
-			overflow:hidden;
+			position: relative;
+			overflow: hidden;
 		}
 	
 		.videoWrapper iframe {
-			height:100%;
-			width:100%;
-			position:absolute;
-			top:0;
-			bottom:0;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+		}
+
+		input.btn-primary {
+			background-color: #9a0014;
+			border-color: #77000f;
+		}
+
+		.band-name {
+			transition: 0.2s all;
+		}
+
+		.dropdown-menu {
+			background: black;
+			border-radius: 0;
+			margin-left: -15px;
+			margin-bottom: 0px;
+			border-bottom: 1px solid white;
+		}
+
+		.dropdown-item {
+			transition: 0.2s all;
+		}
+
+		.dropdown-menu:hover a.dropdown-item {
+			background: white !important;
+			color: black !important;
+		}
+
+		.list-group-item {
+
 		}
 	</style>
 	
@@ -54,80 +79,92 @@
 			<div id="player" style="pointer-events: none"></div>
 		</div>
 		
-		<div class="row">
-			<div class="col-12 p-4 mx-4">
-				<h1 class="text-white">WKBREED</h1>
+		<div class="row position-absolute p-5 w-100" style="top: 0;">
+			<div class="col-12 col-md-6">
+				<h1 class="text-white">WK BREED</h1>
+				<h5 class="text-white" style="margin-top: -13px; opacity: 0.2;">WELL KNOWN BREED</h5>
+			</div>
+			<div class="col-12 col-md-6 text-right">
+				<ul class="list-inline">
+					<li class="list-inline-item"><a class="text-white font-weight-bold" href="https://open.spotify.com/artist/53jhMlw9wuljewswYqG6ek">SPOTIFY</a></li>
+					<li class="list-inline-item"><a class="text-white font-weight-bold" href="https://itunes.apple.com/us/artist/wkbreed/1449126273">APPLE MUSIC</a></li>
+					<li class="list-inline-item text-white"><p class="text-white">|</p></li>
+					<li class="list-inline-item text-white"><a class="text-white" href="#">INSTAGRAM</a></li>
+					<li class="list-inline-item text-white"><a class="text-white" href="#">TWITTER</a></li>
+				</ul>
 			</div>
 		</div>
 		
 		<div class="row position-absolute w-100" style="bottom: 50px">
 			<div class="col-12">
-				<div class="row mx-auto w-50">
+				<div class="row mx-auto" style="width: 30%">
 					<div class="col-12">
 						<img src="assets/img/homescreen-banner.png" class="w-100">
 					</div>
-					<div class="col-4">
+					<div class="col-4 band-name">
 						<div class="dropup">
-							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="pekz">
 								Smooth<br>Pekz
 							</a>
 							
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<a class="dropdown-item" href="https://www.instagram.com/smoothpekz">Instagram</a>
+							<div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
+								<a class="dropdown-item h5 rounded-0 text-white" href="https://www.instagram.com/smoothpekz" target="_blank">Instagram</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-4 border-left band-name">
 						<div class="dropup">
-							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="cho">
 								Robyn<br>Cho
 							</a>
 							
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<a class="dropdown-item" href="https://www.instagram.com/itscho_time">Instagram</a>
+							<div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
+								<a class="dropdown-item h5 rounded-0 text-white" href="https://www.instagram.com/itscho_time" target="_blank">Instagram</a>
 							</div>
 						</div>
 					</div>
-					<div class="col-4">
+					<div class="col-4 border-left band-name">
 						<div class="dropup">
-							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="kings">
 								Unorthodox<br>Kings
 							</a>
 							
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<a class="dropdown-item" href="https://www.instagram.com/ukwkb">Instagram</a>
+							<div class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuLink">
+								<a class="dropdown-item h5 rounded-0 text-white" href="https://www.instagram.com/ukwkb" target="_blank">Instagram</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#emailModal">Open modal for @getbootstrap</button>
-		
 		<div class="modal fade" id="emailModal">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Join the WK BREED family</h5>
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
+
+					<div style="height: 200px; overflow: hidden; ">
+						<img src="assets/img/email.jpg" class="position-relative w-100" style="top: -50px">
+					</div>
+
 					<div class="modal-body">
-						<form>
-							<div class="form-group">
-								<label for="recipient-name" class="col-form-label">Recipient:</label>
-								<input type="text" class="form-control" id="recipient-name">
+						<form target="_blank" action="https://gmail.us20.list-manage.com/subscribe/post" method="POST">
+							<input type="hidden" name="u" value="ae5a960e6b327061026fd2e09">
+							<input type="hidden" name="id" value="93e1d6d79d">
+							<input type="hidden" name="orig-lang" value="1">
+
+							<div class="mc-field-group form-group">
+								<label for="mce-EMAIL">Email Address</label>
+								<input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
 							</div>
-							<div class="form-group">
-								<label for="message-text" class="col-form-label">Message:</label>
-								<textarea class="form-control" id="message-text"></textarea>
+							<div class="clear text-right">
+								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary">
 							</div>
 						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">Send message</button>
 					</div>
 				</div>
 			</div>
@@ -176,16 +213,33 @@
 			$(document).on('mouseenter', ".dropup", function(){
 				$(this).dropdown('show');
 			});
-	
-			$(document).on('mouseleave', "*" ,function(e){
-				var target = $(e.target);
-				if(target.hasClass('dropdown-menu') || target.hasClass('dropdown-item') || target.hasClass('dropdown-text')){
-					return;
-				}
-	
-				$(this).dropdown('hide');
+
+			$('.dropup').hover(function() {
+				$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+			}, function() {
+				$(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+			});
+
+			$('.band-name').hover(function() {
+				$(this).css({
+					"background": 'black'
+				});
+			}, function() {
+				$(this).css({
+					"background": 'transparent'
+				});
+			});
+
+			
+			$('.dropdown-item').on('click', function() {
+				 window.open($(this).attr('href'), '_blank');
+				 win.focus();
 			});
 	
+			$("#mc-embedded-subscribe").on('click', function(){
+				$('#emailModal').modal('hide');
+			});
+
 			sizeTheVideo();
 	
 			$(window).resize(function(){
