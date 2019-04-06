@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-GB" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>WK Breed</title>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	</head>
+	
+	<style type="text/css" media="screen">
+		iframe {
+			height: 100vh;
+		}
+	
+		ul.nav li.dropdown:hover ul.dropdown-menu{
+			display: block;
+		}
+	
+		body {
+			overflow: hidden;
+			background: black;
+		}
+	
+		#iframeCol {
+			max-width: 1280px; /* video width */
+			max-height: 720px; /* video height */
+		}
+	
+		.videoWrapper {
+			height: 100vh;
+			width: 100%;
+			position:relative;
+			overflow:hidden;
+		}
+	
+		.videoWrapper iframe {
+			height:100%;
+			width:100%;
+			position:absolute;
+			top:0;
+			bottom:0;
+		}
+	</style>
+	
+	<body>
+		<div class="videoWrapper">
+			<div id="player" style="pointer-events: none"></div>
+		</div>
+		
+		<div class="row">
+			<div class="col-12 p-4 mx-4">
+				<h1 class="text-white">WKBREED</h1>
+			</div>
+		</div>
+		
+		<div class="row position-absolute w-100" style="bottom: 50px">
+			<div class="col-12">
+				<div class="row mx-auto w-50">
+					<div class="col-12">
+						<img src="assets/img/homescreen-banner.png" class="w-100">
+					</div>
+					<div class="col-4">
+						<div class="dropup">
+							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Smooth<br>Pekz
+							</a>
+							
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								<a class="dropdown-item" href="https://www.instagram.com/smoothpekz">Instagram</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="dropup">
+							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Robyn<br>Cho
+							</a>
+							
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								<a class="dropdown-item" href="https://www.instagram.com/itscho_time">Instagram</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="dropup">
+							<a class="dropdown-text text-uppercase text-white font-weight-bold" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Unorthodox<br>Kings
+							</a>
+							
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								<a class="dropdown-item" href="https://www.instagram.com/ukwkb">Instagram</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#emailModal">Open modal for @getbootstrap</button>
+		
+		<div class="modal fade" id="emailModal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Recipient:</label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="message-text" class="col-form-label">Message:</label>
+								<textarea class="form-control" id="message-text"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">Send message</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script>
+		// 2. This code loads the IFrame Player API code asynchronously.
+		var tag = document.createElement('script');
+	
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	
+		// 3. This function creates an <iframe> (and YouTube player)
+		//    after the API code downloads.
+		var player;
+
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				width: '100%',
+				videoId: 'jhxnlpgrVDo',
+				playerVars: {
+					'autoplay': 1,
+					'controls': 0,
+					'color': 'white',
+					'loop': 1,
+					'disablekb': 0,
+					'fs': 0,
+					'modestbranding': 1,
+					'widget_referrer': 'wkb.com',
+					'showinfo': 0
+				},
+				events: {
+					'onReady': onPlayerReady
+				}
+			});
+		}
+	
+		// 4. The API will call this function when the video player is ready.
+		function onPlayerReady(event) {
+			event.target.playVideo();
+		}
+	
+		$(document).ready(function() {
+			$(document).on('mouseenter', ".dropup", function(){
+				$(this).dropdown('show');
+			});
+	
+			$(document).on('mouseleave', "*" ,function(e){
+				var target = $(e.target);
+				if(target.hasClass('dropdown-menu') || target.hasClass('dropdown-item') || target.hasClass('dropdown-text')){
+					return;
+				}
+	
+				$(this).dropdown('hide');
+			});
+	
+			sizeTheVideo();
+	
+			$(window).resize(function(){
+				sizeTheVideo();
+			});
+
+			$('#emailModal').modal('show');
+
+			function sizeTheVideo(){
+				// - 1.78 is the aspect ratio of the video
+				// - This will work if your video is 1920 x 1080
+				// - To find this value divide the video's native width by the height eg 1920/1080 = 1.78
+				var aspectRatio = 1.78;
+				
+				var video = $('iframe');
+				var videoHeight = video.outerHeight();
+				var newWidth = videoHeight*aspectRatio;
+				var halfNewWidth = newWidth / 2;
+					
+				//Define the new width and centrally align the iframe
+				video.css({
+					"width": newWidth + "px",
+					"left": "50%",
+					"margin-left": "-" + halfNewWidth + "px"
+				});
+			}
+	
+		});
+	</script>
+</html>
