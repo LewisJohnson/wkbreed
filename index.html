@@ -69,8 +69,11 @@
 			color: black !important;
 		}
 
-		.list-group-item {
-
+		@media (min-width: 768px) {
+			.band-row .row {
+				width: 30% !important;
+				min-width: 400px;
+			}	
 		}
 	</style>
 	
@@ -79,25 +82,34 @@
 			<div id="player" style="pointer-events: none"></div>
 		</div>
 		
-		<div class="row position-absolute p-5 w-100" style="top: 0;">
-			<div class="col-12 col-md-6">
+		<div class="row position-absolute p-2 p-md-5 w-100" style="top: 0; left: 15px">
+			<div class="col-12 col-md-4">
 				<h1 class="text-white">WK BREED</h1>
-				<h5 class="text-white" style="margin-top: -13px; opacity: 0.2;">WELL KNOWN BREED</h5>
+				<h5 class="text-white text-nowrap" style="margin-top: -13px; opacity: 0.2;">WELL KNOWN BREED</h5>
 			</div>
-			<div class="col-12 col-md-6 text-right">
+			<div class="col-8 text-right d-none d-md-block">
 				<ul class="list-inline">
 					<li class="list-inline-item"><a class="text-white font-weight-bold" href="https://open.spotify.com/artist/53jhMlw9wuljewswYqG6ek">SPOTIFY</a></li>
 					<li class="list-inline-item"><a class="text-white font-weight-bold" href="https://itunes.apple.com/us/artist/wkbreed/1449126273">APPLE MUSIC</a></li>
-					<li class="list-inline-item text-white"><p class="text-white">|</p></li>
-					<li class="list-inline-item text-white"><a class="text-white" href="#">INSTAGRAM</a></li>
-					<li class="list-inline-item text-white"><a class="text-white" href="#">TWITTER</a></li>
+					<li class="list-inline-item"><p class="text-white">|</p></li>
+					<li class="list-inline-item"><a class="text-white" href="#">INSTAGRAM</a></li>
+					<li class="list-inline-item"><a class="text-white" href="#">TWITTER</a></li>
+				</ul>
+			</div>
+
+			<div class="col-12 mt-3 mt-md-0 d-md-none">
+				<ul class="list-inline">
+					<li><a class="text-white font-weight-bold" href="https://open.spotify.com/artist/53jhMlw9wuljewswYqG6ek">SPOTIFY</a></li>
+					<li><a class="text-white font-weight-bold" href="https://itunes.apple.com/us/artist/wkbreed/1449126273">APPLE MUSIC</a></li>
+					<li><a class="text-white" href="#">INSTAGRAM</a></li>
+					<li><a class="text-white" href="#">TWITTER</a></li>
 				</ul>
 			</div>
 		</div>
 		
-		<div class="row position-absolute w-100" style="bottom: 50px">
+		<div class="row position-absolute w-100 band-row" style="bottom: 50px; left: 15px">
 			<div class="col-12">
-				<div class="row mx-auto" style="width: 30%">
+				<div class="row mx-auto" style="width: 100%; max-width: 400px">
 					<div class="col-12">
 						<img src="assets/img/homescreen-banner.png" class="w-100">
 					</div>
@@ -240,7 +252,9 @@
 				$('#emailModal').modal('hide');
 			});
 
-			sizeTheVideo();
+			setTimeout(function(){
+				sizeTheVideo();
+			}, 200)
 	
 			$(window).resize(function(){
 				sizeTheVideo();
